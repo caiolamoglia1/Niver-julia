@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-void: #080808;
+  --color-abyss: #0f0f0f;
+  --color-shadow: #1a1a1a;
+  --color-purple-deep: #2d0a4e;
+  --color-purple-mid: #4a1070;
+  --color-purple-glow: #8b2fc9;
+  --color-crimson: #6b0f1a;
+  --color-crimson-bright: #c41e3a;
+  --color-gold: #d4af37;
+  --color-gold-light: #f0c040;
+  --color-silver: #c0c0c0;
+  --color-silver-dim: #888888;
+  --font-cinzel: 'Cinzel', serif;
+  --font-cinzel-deco: 'Cinzel Decorative', serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; width: 100%; }
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #080808;
+  color: #c0c0c0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: #2d0a4e; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #8b2fc9; }
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); text-shadow: 2px 0 #c41e3a; }
+  40% { transform: translate(2px, -1px); text-shadow: -2px 0 #8b2fc9; }
+  60% { transform: translate(-1px, 2px); text-shadow: 1px 0 #d4af37; }
+  80% { transform: translate(1px, -2px); text-shadow: -1px 0 #c41e3a; }
+  100% { transform: translate(0); }
+}
+@keyframes flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96% { opacity: 0.4; } 97% { opacity: 1; } 98% { opacity: 0.2; } 99% { opacity: 0.9; }
+}
+@keyframes float-anim {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 10px #8b2fc9, 0 0 20px #8b2fc940; }
+  50% { box-shadow: 0 0 20px #8b2fc9, 0 0 40px #8b2fc960; }
+}
+@keyframes spider-run {
+  0% { left: -80px; }
+  100% { left: calc(100vw + 80px); }
+}
+@keyframes moonwalk-anim {
+  0% { right: -150px; }
+  100% { right: 110vw; }
+}
+@keyframes rose-fall {
+  0% { opacity: 0; transform: translateY(-20px) rotate(0deg); }
+  10% { opacity: 1; }
+  90% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(100vh) rotate(720deg); }
+}
+@keyframes neon-pulse {
+  0%, 100% { text-shadow: 0 0 7px #ff3333, 0 0 10px #ff3333, 0 0 21px #ff0000; }
+  50% { text-shadow: 0 0 7px #ff6666, 0 0 20px #ff4444, 0 0 42px #ff0000; }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes envelope-open {
+  0% { transform: rotateX(0deg); transform-origin: top center; }
+  100% { transform: rotateX(-180deg); transform-origin: top center; }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.glitch { animation: glitch 0.3s ease infinite; }
+.flicker { animation: flicker 3s ease-in-out infinite; }
+.float-anim { animation: float-anim 3s ease-in-out infinite; }
+.pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.neon-red { animation: neon-pulse 2s ease-in-out infinite; }
+.font-cinzel { font-family: 'Cinzel', serif; }
+.font-cinzel-deco { font-family: 'Cinzel Decorative', serif; }
